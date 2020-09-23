@@ -10,8 +10,9 @@ RUN apt-get install unzip -y
 
 RUN git clone https://github.com/flutter/flutter.git -b beta
 
-RUN "${FLUTTER_ROOT}/bin/flutter" doctor
-RUN "${FLUTTER_ROOT}/bin/flutter" upgrade
 RUN "${FLUTTER_ROOT}/bin/flutter" config --enable-web
+RUN "${FLUTTER_ROOT}/bin/flutter" upgrade
+RUN "${FLUTTER_ROOT}/bin/flutter" doctor
+
 
 ENV PATH="${PATH}:${FLUTTER_ROOT}/bin"
